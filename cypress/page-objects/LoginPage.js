@@ -6,13 +6,17 @@ class LoginPage {
         cy.visit('https://demo4.dexmanager.com/DexFrontEnd/#!/login')
     }
 
+    getLoginForm() {
+        return cy.get('dex-app')
+        .shadow()
+        .find('iron-pages')
+        .find('dex-login')
+        .shadow()
+        .find('form')
+    }
+
     fillUserAndPass(user, password) {
-        cy.get('dex-app')
-          .shadow()
-          .find('iron-pages')
-          .find('dex-login')
-          .shadow()
-          .find('form')
+        this.getLoginForm()
           .find('paper-input')
           .shadow()
           .find('paper-input-container')
@@ -22,12 +26,7 @@ class LoginPage {
               cy.get('input').type(user)
           })
 
-          cy.get('dex-app')
-          .shadow()
-          .find('iron-pages')
-          .find('dex-login')
-          .shadow()
-          .find('form')
+        this.getLoginForm()
           .find('paper-input')
           .shadow()
           .find('paper-input-container')
@@ -37,12 +36,7 @@ class LoginPage {
               cy.get('input').type(password)
           })
 
-          cy.get('dex-app')
-          .shadow()
-          .find('iron-pages')
-          .find('dex-login')
-          .shadow()
-          .find('form')
+        this.getLoginForm()
           .find('paper-button')
           .eq(0)
           .click()
