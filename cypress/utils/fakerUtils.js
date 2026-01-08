@@ -1,30 +1,14 @@
 const { faker } = require('@faker-js/faker')
 
-export const generateRandomLogin = () => {
+export const generateFailingLogin = () => {
     return {
-        randomMail: faker.internet.email(),
-        name: faker.person.firstName(),
-        lastName: faker.person.lastName(),
+        user: faker.internet.username(),
+        password: faker.internet.password()
     }
 }
-export const generateRandomUser = () => {
-    const basicData = generateRandomLogin()
+export const generateValidLogin = () => {
     return {
-        ...basicData,
-        address: faker.location.streetAddress(),
-        state: faker.location.state(),
-        city: faker.location.city(),
-        zipcode: faker.location.zipCode(),
-        randomPass: faker.internet.password(),
-        mobile: faker.phone.number()
-    }
-}
-
-export const generateRandomCreditCard = () => {
-    return {
-        cardNumber: faker.finance.creditCardNumber(),
-        CVV: faker.finance.creditCardCVV(),
-        expMonth: faker.date.month(),
-        expYear: faker.date.future(6).getFullYear()
+        user: "challengeqa",
+        password: "Abcd1234"
     }
 }

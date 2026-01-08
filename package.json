@@ -1,12 +1,12 @@
 {
-  "name": "applydigital-solution",
+  "name": "dexmanager-solution",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "testChrome": "npx cypress run --spec 'cypress/e2e/tests/applyDigitalTest.cy.js' --browser chrome",
-    "testFirefox": "npx cypress run --spec 'cypress/e2e/tests/applyDigitalTest.cy.js' --browser firefox",
-    "testEdge": "npx cypress run --spec 'cypress/e2e/tests/applyDigitalTest.cy.js' --browser edge",
-    "testElectron": "npx cypress run --spec 'cypress/e2e/tests/applyDigitalTest.cy.js' --browser electron"
+    "testChrome": "npx cypress run --spec 'cypress/e2e/tests/dexmanagerTest.cy.js' --browser chrome",
+    "testFirefox": "npx cypress run --spec 'cypress/e2e/tests/dexmanagerTest.cy.js' --browser firefox",
+    "testEdge": "npx cypress run --spec 'cypress/e2e/tests/dexmanagerTest.cy.js' --browser edge",
+    "testElectron": "npx cypress run --spec 'cypress/e2e/tests/dexmanagerTest.cy.js' --browser electron"
   },
   "keywords": [],
   "author": "",

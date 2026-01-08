@@ -1,11 +1,51 @@
-import { generateRandomLogin } from "../utils/fakerUtils"
+import { generateRandomLogin, generateValidLogin } from "../utils/fakerUtils"
 
 class LoginPage {
-    fillUserAndPass() {
-        const {randomMail, name, lastName } = generateRandomLogin()
-        cy.get('input[data-qa="signup-name"]').type(name + ' ' + lastName)
-        cy.get('input[data-qa="signup-email"]').type(randomMail)
-        cy.get('button[data-qa="signup-button"]').click()   
+
+    visit() {
+        cy.visit('https://demo4.dexmanager.com/DexFrontEnd/#!/login')
+    }
+
+    fillUserAndPass(user, password) {
+        cy.get('dex-app')
+          .shadow()
+          .find('iron-pages')
+          .find('dex-login')
+          .shadow()
+          .find('form')
+          .find('paper-input')
+          .shadow()
+          .find('paper-input-container')
+          .eq(0)
+          .find('iron-input')
+          .within(() => {
+              cy.get('input').type(user)
+          })
+
+          cy.get('dex-app')
+          .shadow()
+          .find('iron-pages')
+          .find('dex-login')
+          .shadow()
+          .find('form')
+          .find('paper-input')
+          .shadow()
+          .find('paper-input-container')
+          .eq(1)
+          .find('iron-input')
+          .within(() => {
+              cy.get('input').type(password)
+          })
+
+          cy.get('dex-app')
+          .shadow()
+          .find('iron-pages')
+          .find('dex-login')
+          .shadow()
+          .find('form')
+          .find('paper-button')
+          .eq(0)
+          .click()
     }
 
 } export default new LoginPage()

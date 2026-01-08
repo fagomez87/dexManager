@@ -1,0 +1,2 @@
+- [x] Update cypress.config.js to enable experimentalShadowDomSupport
+- [x] Edit LoginPage.js to use generated user and password variables instead of hardcoded strings
